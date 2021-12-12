@@ -1,4 +1,5 @@
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/splash/splash_screen.dart';
 import 'package:around_the_world/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
-          fontFamily: "Patrick Hand"),
+          fontFamily: "Muli"),
       home: WelcomeScreen(),
     );
   }

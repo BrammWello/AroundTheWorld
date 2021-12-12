@@ -1,9 +1,8 @@
-import 'package:around_the_world/components/default_button.dart';
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/sign_up_options/sign_up_options_screen.dart';
 import 'package:around_the_world/screens/splash/components/splash_content.dart';
-import 'package:around_the_world/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:around_the_world/size_config.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -72,7 +71,15 @@ class _BodyState extends State<Body> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(0)),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.bottomToTop,
+                            child: SignUpOptions(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Continue",
                         style: TextStyle(

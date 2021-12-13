@@ -29,11 +29,8 @@ class _BodyState extends State<Body> {
         child: Expanded(
           child: Column(
             children: <Widget>[
-              Spacer(
-                flex: 1,
-              ),
+              Spacer(),
               Expanded(
-                flex: 1,
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Container(
@@ -51,9 +48,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
               ),
-              Spacer(
-                flex: 1,
-              ),
+              Spacer(),
               Expanded(
                 child: Align(
                   alignment: Alignment.topLeft,
@@ -71,9 +66,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
               ),
-              Spacer(
-                flex: 1,
-              ),
+              Spacer(),
               SizedBox(
                 child: Container(
                   height: size.height * 0.07,
@@ -157,9 +150,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
               ),
-              Spacer(
-                flex: 1,
-              ),
+              Spacer(),
             ],
           ),
         ),

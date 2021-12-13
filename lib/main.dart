@@ -1,4 +1,7 @@
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/complete_profile/complete_profile_screen.dart';
+import 'package:around_the_world/screens/log_in/log_in_screen.dart';
+import 'package:around_the_world/screens/profile_completed/profile_completed_screen.dart';
 import 'package:around_the_world/screens/splash/splash_screen.dart';
 import 'package:around_the_world/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
           fontFamily: "Muli"),
-      home: WelcomeScreen(),
+      home: LogIn(),
     );
   }
 }

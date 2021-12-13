@@ -16,13 +16,13 @@ class CustomSuffixIcon extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(
         0,
-        20,
-        20,
-        20,
+        16,
+        16,
+        16,
       ),
       child: SvgPicture.asset(
         svgIcon,
-        height: 18,
+        height: 16,
       ),
     );
   }

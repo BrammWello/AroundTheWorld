@@ -2,6 +2,7 @@ import 'package:around_the_world/components/custom_suffix_icon.dart';
 import 'package:around_the_world/components/default_button.dart';
 import 'package:around_the_world/components/social_card.dart';
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/log_in/components/log_in_form_fields.dart';
 import 'package:around_the_world/screens/sign_up/components/sign_up_form_fields.dart';
 import 'package:flutter/material.dart';
 
@@ -17,19 +18,19 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: size.height * 0.1,
+                height: size.height * 0.15,
               ),
               Text(
-                "Register Account",
+                "Log in to Your Account",
                 style: headingStyle,
               ),
               Text(
-                "Complete profile or continue\nwith social media",
+                "Enter Your credentions or continue\nwith social media",
                 textAlign: TextAlign.center,
               ),
               Padding(
                 padding: const EdgeInsets.all(kMarginAndPaddingSize),
-                child: SignUpFormFields(size),
+                child: LogInFormFields(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

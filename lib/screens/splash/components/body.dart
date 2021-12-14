@@ -1,4 +1,6 @@
+import 'package:around_the_world/components/default_button.dart';
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/sign_up/sign_up_screen.dart';
 import 'package:around_the_world/screens/sign_up_options/sign_up_options_screen.dart';
 import 'package:around_the_world/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
@@ -31,68 +33,58 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
-                itemCount: splashData.length,
-                itemBuilder: (context, index) => SplashContent(
-                  image: splashData[index]["image"],
-                  text: splashData[index]["text"],
+      child: Padding(
+        padding: const EdgeInsets.all(kMarginAndPaddingSize),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 3,
+                child: PageView.builder(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentPage = value;
+                    });
+                  },
+                  itemCount: splashData.length,
+                  itemBuilder: (context, index) => SplashContent(
+                    image: splashData[index]["image"],
+                    text: splashData[index]["text"],
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      splashData.length,
-                      (index) => buildDot(index: index),
-                    ),
-                  ),
-                  Spacer(flex: 3),
-                  SizedBox(
-                    width: double.infinity,
-                    height: size.height * 0.07,
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: kSecondaryColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0)),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        splashData.length,
+                        (index) => buildDot(index: index),
                       ),
-                      onPressed: () {
+                    ),
+                    SizedBox(
+                      height: size.height * 0.05,
+                    ),
+                    DefaultButton(
+                      text: "Continue",
+                      press: () {
                         Navigator.push(
                           context,
                           PageTransition(
                             type: PageTransitionType.bottomToTop,
-                            child: SignUpOptions(),
+                            child: SignUp(),
                           ),
                         );
                       },
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -44,7 +44,7 @@ class _LogInFormFieldsState extends State<LogInFormFields> {
             FormError(errors: errors),
             SizedBox(height: size.height * 0.03),
             DefaultButton(
-              text: "Sign Up",
+              text: "Log In",
               press: () {
                 if (_formKey.currentState.validate()) {
                   //go to profile page

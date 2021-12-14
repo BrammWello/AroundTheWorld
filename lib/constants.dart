@@ -10,6 +10,9 @@ const kAnimationDuration = Duration(milliseconds: 200);
 
 const double kMarginAndPaddingSize = 20;
 
+const double kMenuIconSize = 30;
+const double kMenuIconSpace = 40;
+
 //heading styles
 final headingStyle = TextStyle(
   fontSize: 28,

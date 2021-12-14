@@ -1,9 +1,6 @@
-import 'package:around_the_world/components/custom_suffix_icon.dart';
-import 'package:around_the_world/components/default_button.dart';
 import 'package:around_the_world/components/social_card.dart';
 import 'package:around_the_world/constants.dart';
 import 'package:around_the_world/screens/log_in/components/log_in_form_fields.dart';
-import 'package:around_the_world/screens/sign_up/components/sign_up_form_fields.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -28,9 +25,15 @@ class Body extends StatelessWidget {
                 "Enter Your credentions or continue\nwith social media",
                 textAlign: TextAlign.center,
               ),
+              SizedBox(
+                height: size.height * 0.07,
+              ),
               Padding(
                 padding: const EdgeInsets.all(kMarginAndPaddingSize),
                 child: LogInFormFields(),
+              ),
+              SizedBox(
+                height: size.height * 0.07,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

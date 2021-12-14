@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: size.height * 0.1,
+                height: size.height * 0.15,
               ),
               Text(
                 "Register Account",

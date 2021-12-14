@@ -1,3 +1,5 @@
+import 'package:around_the_world/components/default_button.dart';
+import 'package:around_the_world/screens/sign_up_options/sign_up_options_screen.dart';
 import 'package:around_the_world/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -29,7 +31,7 @@ class _BodyState extends State<Body> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: size.height * 0.2,
+                    height: size.height * 0.15,
                   ),
                   SizedBox(
                     child: DefaultTextStyle(
@@ -42,7 +44,7 @@ class _BodyState extends State<Body> {
                         animatedTexts: [
                           TyperAnimatedText(
                             "Hi, You",
-                            speed: const Duration(milliseconds: 200),
+                            speed: const Duration(milliseconds: 150),
                           ),
                         ],
                         totalRepeatCount: 1,
@@ -62,76 +64,24 @@ class _BodyState extends State<Body> {
               ),
             ),
           ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    child: DefaultTextStyle(
-                      style: const TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Patrick Hand",
-                        color: Colors.black,
-                      ),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          ScaleAnimatedText(
-                            "No Rush. Am Getting Ready.",
-                          ),
-                          ScaleAnimatedText(
-                            "No Rush. Am Getting Ready..",
-                          ),
-                          ScaleAnimatedText(
-                            "No Rush. Am Getting Ready...",
-                          ),
-                        ],
-                        repeatForever: true,
-                      ),
-                    ),
+          Padding(
+            padding: const EdgeInsets.all(kMarginAndPaddingSize),
+            child: DefaultButton(
+              text: "Begin The Journey",
+              press: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.bottomToTop,
+                    child: SignUpOptions(),
                   ),
-                  SizedBox(
-                    height: size.height * 0.1,
-                  ),
-                ],
-              ),
+                );
+              },
             ),
           ),
           SizedBox(
-            child: Container(
-              height: size.height * 0.07,
-              width: size.width,
-              color: kSecondaryColor,
-              child: Center(
-                child: FutureBuilder(
-                  future: Future.delayed(Duration(seconds: 3)),
-                  builder:
-                      (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                    return TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            child: SplashScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Begin the Journey",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
+            height: size.height * 0.1,
+          )
         ],
       ),
     );

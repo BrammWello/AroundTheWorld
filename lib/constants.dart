@@ -9,6 +9,7 @@ const kSecondaryColor = Color(0xFFe76f51);
 const kAnimationDuration = Duration(milliseconds: 200);
 
 const double kMarginAndPaddingSize = 20;
+const double kMarginAndPaddingHomepageSize = 20;
 
 const double kMenuIconSize = 30;
 const double kMenuIconSpace = 40;

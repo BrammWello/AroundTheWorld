@@ -1,5 +1,8 @@
+import 'package:around_the_world/components/custom_suffix_icon.dart';
+import 'package:around_the_world/components/social_card.dart';
 import 'package:around_the_world/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -12,14 +15,16 @@ class Body extends StatelessWidget {
           SizedBox(
             child: SingleChildScrollView(
               child: Container(
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                    offset: Offset(0, 7),
-                  ),
-                ]),
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: Offset(0, 7),
+                    ),
+                  ],
+                ),
                 height: size.height,
                 width: size.width * 0.15,
                 child: Container(
@@ -60,7 +65,10 @@ class Body extends StatelessWidget {
                         child: Container(
                           height: kMenuIconSize,
                           width: kMenuIconSize,
-                          child: SvgPicture.asset("assets/icons/swimmer.svg"),
+                          child: SvgPicture.asset(
+                            "assets/icons/swimmer.svg",
+                            color: kSecondaryLightColor,
+                          ),
                         ),
                       ),
                       SizedBox(height: kMenuIconSpace),
@@ -68,7 +76,9 @@ class Body extends StatelessWidget {
                         child: Container(
                           height: kMenuIconSize,
                           width: kMenuIconSize,
-                          child: SvgPicture.asset("assets/icons/moctail.svg"),
+                          child: SvgPicture.asset(
+                            "assets/icons/moctail.svg",
+                          ),
                         ),
                       ),
                       SizedBox(height: kMenuIconSpace),
@@ -122,6 +132,128 @@ class Body extends StatelessWidget {
             child: Container(
               height: size.height,
               width: size.width * 0.85,
+              color: kPrimaryColor.withOpacity(0.1),
+              child: Container(
+                padding: EdgeInsets.all(kMarginAndPaddingHomepageSize),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.03,
+                    ),
+                    Text(
+                      "Swimming",
+                      style: headingStyle,
+                    ),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 1,
+                            blurRadius: 10,
+                            offset: Offset(0, 0),
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        height: size.height * 0.2,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              kSecondaryLightColor,
+                              kSecondaryColor,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/icons/swimmer.svg",
+                                    color: kPrimaryColor,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 16),
+                                    child: Text(
+                                      "Swimming Sites Visited \n1 This week",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search Place",
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          border: InputBorder.none,
+                          prefixIcon: CustomSuffixIcon(
+                            svgIcon: "assets/icons/magnifier.svg",
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: size.height * 0.07,
+                                  width: size.height * 0.07,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                    child: SvgPicture.asset(
+                                      "assets/icons/archive.svg",
+                                      color: kPrimaryLightColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
         ],

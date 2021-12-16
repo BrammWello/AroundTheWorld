@@ -5,14 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      width: double.infinity,
       child: Row(
         children: [
           SizedBox(
+            height: size.height,
             child: SingleChildScrollView(
               child: Container(
                 decoration: BoxDecoration(
@@ -245,12 +252,83 @@ class Body extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                Text(
+                                  "My Shares",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: kPrimaryColor),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: size.height * 0.07,
+                                    width: size.height * 0.07,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.2),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Center(
+                                      child: SvgPicture.asset(
+                                        "assets/icons/link.svg",
+                                        color: kPrimaryLightColor,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "Following",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: kPrimaryColor),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: size.height * 0.07,
+                                  width: size.height * 0.07,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                    child: SvgPicture.asset(
+                                      "assets/icons/add-new.svg",
+                                      color: kPrimaryLightColor,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  "Add Place",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: kPrimaryColor),
+                                )
                               ],
                             ),
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text("Discover more swimming places"),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

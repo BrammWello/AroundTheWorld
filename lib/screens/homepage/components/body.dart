@@ -325,7 +325,80 @@ class _BodyState extends State<Body> {
                     Container(
                       child: Column(
                         children: [
-                          Text("Discover more swimming places"),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Discover more swimming places",
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.02,
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: size.height * 0.4,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/app_icon.png"),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.1,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Text(
+                                              "I will write something here\nAnd some other text Down here which can overflow downward"),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        height: size.height * 0.4,
+                                        width: size.width * 0.4,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/images/app_icon.png"),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

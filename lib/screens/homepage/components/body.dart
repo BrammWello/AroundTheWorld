@@ -140,7 +140,7 @@ class _BodyState extends State<Body> {
               height: size.height,
               width: size.width * 0.85,
               color: kPrimaryColor.withOpacity(0.1),
-              child: Container(
+              child: SingleChildScrollView(
                 padding: EdgeInsets.all(kMarginAndPaddingHomepageSize),
                 child: Column(
                   children: [
@@ -168,14 +168,7 @@ class _BodyState extends State<Body> {
                       child: Container(
                         height: size.height * 0.2,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            colors: [
-                              kSecondaryLightColor,
-                              kSecondaryColor,
-                            ],
-                          ),
+                          gradient: orangeColorGradient,
                           borderRadius: BorderRadius.all(
                             Radius.circular(8),
                           ),
@@ -341,7 +334,7 @@ class _BodyState extends State<Body> {
                               child: Row(
                                 children: [
                                   Container(
-                                    height: size.height * 0.4,
+                                    height: size.height * 0.45,
                                     width: size.width * 0.5,
                                     decoration: BoxDecoration(),
                                     child: Column(
@@ -356,13 +349,13 @@ class _BodyState extends State<Body> {
                                             ),
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    "assets/images/app_icon.png"),
+                                                    "assets/images/swimming_1.jpg"),
                                                 fit: BoxFit.cover),
                                           ),
                                         ),
                                         Container(
                                           padding: EdgeInsets.all(8.0),
-                                          height: size.height * 0.1,
+                                          height: size.height * 0.15,
                                           width: size.width * 0.5,
                                           decoration: BoxDecoration(
                                             color: kPrimaryLightColor
@@ -372,28 +365,677 @@ class _BodyState extends State<Body> {
                                               bottomLeft: Radius.circular(8),
                                             ),
                                           ),
-                                          child: Text(
-                                              "I will write something here\nAnd some other text Down here which can overflow downward"),
-                                        )
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text:
+                                                          "#WatamuDeepSeaDiving\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Immerse yourself into a very serene environemnt and deep dive into the wonders of the world in this amazing adventure"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite_border,
+                                                          color:
+                                                              kSecondaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
                                   SizedBox(
                                     width: size.width * 0.05,
                                   ),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        height: size.height * 0.4,
-                                        width: size.width * 0.4,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/images/app_icon.png"),
-                                              fit: BoxFit.cover),
+                                  Container(
+                                    height: size.height * 0.45,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/swimming_2.jpg"),
+                                                fit: BoxFit.cover),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.15,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text: "#WhaleRider\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Get a thrilling whale riding eperience in the Mombasa coast water"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite_border,
+                                                          color:
+                                                              kSecondaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  Container(
+                                    height: size.height * 0.45,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/swimming_3.jpg"),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.15,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text:
+                                                          "#CarnivoreWaterWorld\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Immerse yourself into a very serene environemnt and deep dive into the wonders of the world in this amazing adventure"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite_border,
+                                                          color:
+                                                              kSecondaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  Container(
+                                    height: size.height * 0.45,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/swimming_4.jpg"),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.15,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text: "#PwaniSunsets\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Immerse yourself into a very serene environemnt and deep dive into the wonders of the world in this amazing adventure"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite_border,
+                                                          color:
+                                                              kSecondaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  Container(
+                                    height: size.height * 0.45,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/swimming_5.jpg"),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.15,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text:
+                                                          "#NyahururuWaterfalls\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Immerse yourself into a very serene environemnt and deep dive into the wonders of the world in this amazing adventure"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite_border,
+                                                          color:
+                                                              kSecondaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
+                                  ),
+                                  Container(
+                                    height: size.height * 0.45,
+                                    width: size.width * 0.5,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: size.height * 0.3,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                            ),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/swimming_6.jpg"),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Container(
+                                          padding: EdgeInsets.all(8.0),
+                                          height: size.height * 0.15,
+                                          width: size.width * 0.5,
+                                          decoration: BoxDecoration(
+                                            color: kPrimaryLightColor
+                                                .withOpacity(0.1),
+                                            borderRadius: BorderRadius.only(
+                                              bottomRight: Radius.circular(8),
+                                              bottomLeft: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              RichText(
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: <TextSpan>[
+                                                    TextSpan(
+                                                      text: "#PiratesBeach\n",
+                                                      style: hashTagStyle,
+                                                    ),
+                                                    TextSpan(
+                                                        style: cardTextStyle,
+                                                        text:
+                                                            "Immerse yourself into a very serene environemnt and deep dive into the wonders of the world in this amazing adventure"),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: size.height * 0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.favorite,
+                                                          color: kPrimaryColor,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .message_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        Icon(
+                                                          Icons.share_outlined,
+                                                          color: Colors.black,
+                                                          size: 24.0,
+                                                          semanticLabel:
+                                                              'Text to announce in accessibility modes',
+                                                        ),
+                                                        Text("998"),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: size.width * 0.05,
                                   ),
                                 ],
                               ),

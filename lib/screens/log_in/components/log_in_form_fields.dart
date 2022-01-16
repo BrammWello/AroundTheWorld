@@ -2,7 +2,9 @@ import 'package:around_the_world/components/custom_suffix_icon.dart';
 import 'package:around_the_world/components/default_button.dart';
 import 'package:around_the_world/components/form_error.dart';
 import 'package:around_the_world/constants.dart';
+import 'package:around_the_world/screens/homepage/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LogInFormFields extends StatefulWidget {
   @override
@@ -48,7 +50,13 @@ class _LogInFormFieldsState extends State<LogInFormFields> {
               press: () {
                 if (_formKey.currentState.validate()) {
                   //go to profile page
-                  Navigator.pushNamed(context, null);
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      child: HomeScreen(),
+                    ),
+                  );
                 }
               },
             )

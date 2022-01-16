@@ -75,7 +75,7 @@ class _BodyState extends State<Body> {
                           context,
                           PageTransition(
                             type: PageTransitionType.bottomToTop,
-                            child: SignUp(),
+                            child: SignUpOptions(),
                           ),
                         );
                       },
